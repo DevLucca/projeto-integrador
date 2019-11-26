@@ -28,8 +28,8 @@ module.exports = {
             await flag.forEach((element,i) => {
                 flag[i] = Number(element)
             });
-            
-            if (!!Point.findOne({ 'endereco': formatted_address })){
+            const cepExists = await Point.findOne({ 'CEP': cep })
+            if (!cepExists){
             await Point.create({
                 endereco: formatted_address,
                 CEP: cep,
