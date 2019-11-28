@@ -5,7 +5,8 @@ const config = require('../config.json');
 
 module.exports = {
     async store(req, res) {
-        const { cep, flagTipo } = req.query;
+        let { cep, flagTipo } = req.query;
+        cep = await cep.replace('-','')
         const response = await axios.get(`https://viacep.com.br/ws/${cep}/json`).catch(function (error) {
             if (error.response) {
               return res.json({ "status_code": error.response.status, "error": error.response.data, "field": "CEP"});
