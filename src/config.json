@@ -1,8 +1,0 @@
-{
-    "API":{
-        "token": "AIzaSyAG7KgoDro1jqkyGz423d_jK3Y9KlZMArE"
-    },
-    "mongo": {
-        "connectionString": "lucca:@l5c31n2@cluster0-91lyd.mongodb.net/projeto?retryWrites=true&w=majority"
-    }
-}
