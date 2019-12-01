@@ -4,10 +4,7 @@ const config = require('./config.json');
 const routes = require('./routes');
 const server = express();
 
-mongoose.connect(`mongodb+srv://${config.mongo.connectionString}`, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-});
+mongoose.connect(`mongodb+srv://${config.mongo.connectionString}`, config.mongo.options);
 
 server.use(express.json());
 server.use(routes);
